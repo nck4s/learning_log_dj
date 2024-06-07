@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h1>Topic: {{ topic }}</h1>
+
+<p>Entries:</p>
+<ul>
+    {% for entry in entries %}
+    <li>
+        <p> {{entry.date_added|date:"M d, Y H:i" }}</p>
+        <P>{{entry.text|linebreaks}}</P>
+    </li>
+    {% empty %}
+    <li>No entries have been added.</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
