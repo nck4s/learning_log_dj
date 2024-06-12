@@ -11,7 +11,8 @@
     {% for entry in entries %}
     <li>
         <p> {{entry.date_added|date:"M d, Y H:i" }}</p>
-        <P>{{entry.text|linebreaks}}</P>
+        <P>{{entry.text|linebreaks}}</p>
+        <p><a href="{% url 'edit_entry' entry.id %}">Edit entry</a></p>
     </li>
     {% empty %}
     <li>No entries have been added.</li>
